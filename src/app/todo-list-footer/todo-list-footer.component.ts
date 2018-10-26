@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Todo } from '../todo';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Todo} from '../todo';
 
 @Component({
   selector: 'app-todo-list-footer',
@@ -11,7 +11,17 @@ export class TodoListFooterComponent {
   @Input()
   todos: Todo[];
 
+  @Input()
+  filter: String;
+
+  @Output()
+  changeFilter: EventEmitter<String> = new EventEmitter();
+
   constructor() {
+  }
+
+  onFilterChange(filter: String) {
+    this.changeFilter.emit(filter);
   }
 
 }

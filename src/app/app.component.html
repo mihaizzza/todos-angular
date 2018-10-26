@@ -4,10 +4,13 @@
   ></app-todo-list-header>
   <app-todo-list
     [todos]="todos"
+    [filter]="filter"
     (toggleComplete)="onToggleTodoComplete($event)"
     (remove)="onRemoveTodo($event)"
   ></app-todo-list>
   <app-todo-list-footer
     [todos]="todos"
+    [filter]="filter"
+    (changeFilter)="onChangeFilter($event)"
   ></app-todo-list-footer>
 </section>

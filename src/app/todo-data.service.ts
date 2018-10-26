@@ -41,5 +41,4 @@ export class TodoDataService {
     todo.complete = !todo.complete;
     return this.api.updateTodo(todo);
   }
-
 }

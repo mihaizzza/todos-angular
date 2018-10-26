@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { TodoDataService } from './todo-data.service';
-import { Todo } from './todo';
+import {Component, OnInit} from '@angular/core';
+import {TodoDataService} from './todo-data.service';
+import {Todo} from './todo';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,7 @@ import { Todo } from './todo';
 export class AppComponent implements OnInit {
 
   todos: Todo[] = [];
+  filter: String = 'all';
 
   constructor(
     private todoDataService: TodoDataService
@@ -55,5 +56,9 @@ export class AppComponent implements OnInit {
           this.todos = this.todos.filter((t) => t.id !== todo.id);
         }
       );
+  }
+  
+  onChangeFilter(filter) {
+    this.filter = filter;
   }
 }

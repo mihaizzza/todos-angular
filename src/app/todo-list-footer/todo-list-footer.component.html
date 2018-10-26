@@ -1,3 +1,8 @@
 <footer class="footer" *ngIf="todos.length > 0">
   <span class="todo-count"><strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span>
+  <div class="todo-filters">
+    <div [ngClass]="{'selected': filter === 'all'}" (click)="onFilterChange('all')">All</div>
+    <div [ngClass]="{'selected': filter === 'active'}" (click)="onFilterChange('active')">Active</div>
+    <div [ngClass]="{'selected': filter === 'completed'}" (click)="onFilterChange('completed')">Completed</div>
+  </div>
 </footer>
